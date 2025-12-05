@@ -1,0 +1,60 @@
+iniciar-programa
+    define-nueva-instruccion gira-derecha como inicio
+    	gira-izquierda;
+        gira-izquierda;
+        gira-izquierda;
+    fin;
+    define-nueva-instruccion gira como inicio
+    	gira-izquierda;
+        avanza;
+        gira-izquierda;
+        avanza;
+        gira-izquierda;
+        avanza;
+        gira-izquierda;
+        avanza;
+    fin;
+    inicia-ejecucion
+    	mientras frente-bloqueado y no-orientado-al-sur hacer inicio
+        	gira-izquierda
+        fin;
+        mientras frente-libre y derecha-libre y izquierda-libre hacer inicio
+        	avanza;
+            si frente-bloqueado entonces
+            	gira-derecha;
+            fin;
+        mientras izquierda-bloqueada hacer inicio
+        	si frente-libre entonces inicio
+            	avanza;
+            fin;
+            si frente-bloqueado entonces inicio
+            	gira-derecha;
+            fin;
+        fin;
+        mientras derecha-bloqueada hacer inicio
+        	si frente-libre entonces inicio
+            	avanza;
+            fin;
+            si frente-bloqueado entonces inicio
+            	gira-izquierda;
+            fin;
+        fin;
+        mientras frente-libre y izquierda-bloqueada hacer inicio
+        	avanza;
+            gira-izquierda;
+            avanza;
+        fin;
+        mientras frente-libre y derecha-bloqueada hacer inicio
+        	avanza;
+            gira-derecha;
+            avanza;
+        fin;
+        si frente-bloqueado y derecha-libre entonces inicio
+        	gira-derecha;
+            avanza;
+        fin;       
+        gira-izquierda;
+        avanza;
+        apagate;
+    termina-ejecucion
+finalizar-programa
