@@ -1,0 +1,83 @@
+iniciar-programa
+    define-nueva-instruccion gira-derecha como inicio
+    	gira-izquierda;
+        gira-izquierda;
+        gira-izquierda;
+    fin;
+    define-nueva-instruccion salir-caja como inicio
+    	gira-izquierda;
+        gira-izquierda;
+        avanza;
+        gira-izquierda;
+        gira-izquierda;
+        gira-izquierda;
+        avanza;
+        gira-izquierda;
+        gira-izquierda;
+        gira-izquierda;
+        avanza;
+        avanza;
+        gira-izquierda;
+        gira-izquierda;
+        gira-izquierda;
+        avanza;
+        gira-izquierda;
+        gira-izquierda;
+        gira-izquierda;
+    fin;
+     define-nueva-instruccion gira-atras como inicio
+    	gira-izquierda;
+        gira-izquierda;
+    fin;
+    inicia-ejecucion
+        mientras no-orientado-al-norte hacer inicio
+        	gira-izquierda;
+        fin;
+        mientras frente-libre hacer inicio
+        	avanza;
+        fin;
+        	gira-izquierda;
+        mientras frente-libre hacer inicio
+        	avanza;
+        fin;
+        	gira-izquierda;
+        mientras junto-a-zumbador hacer inicio
+        	coge-zumbador;
+        fin;
+        mientras no-junto-a-zumbador y ningun-zumbador-en-la-mochila hacer inicio
+        	si frente-libre entonces inicio
+            	avanza;
+            fin;        
+            si frente-bloqueado y orientado-al-sur entonces inicio
+            	gira-atras;
+            fin;
+            si frente-bloqueado y orientado-al-norte entonces inicio
+            	gira-derecha;
+                avanza;
+                gira-derecha;
+            fin;
+        mientras junto-a-zumbador hacer inicio
+        	coge-zumbador
+        fin;
+        mientras algun-zumbador-en-la-mochila hacer inicio
+        	si frente-bloqueado y derecha-bloqueada y izquierda-bloqueada entonces inicio
+            	gira-atras;
+            fin;
+            mientras frente-libre hacer inicio
+            	avanza;
+            fin;
+            gira-derecha;
+            mientras frente-libre hacer inicio
+            	avanza;
+            fin;
+            mientras frente-libre hacer inicio
+            	avanza;
+            fin;
+            si orientado-al-sur y derecha-libre y izquierda-bloqueada y frente-bloqueado entonces inicio
+            	deja-zumbador
+            fin;
+        fin;        
+    fin;
+    apagate;
+    termina-ejecucion
+finalizar-programa
