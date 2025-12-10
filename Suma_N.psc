@@ -5,7 +5,7 @@ Algoritmo Suma_N
 	C=0
 	Resultado=0
 	Si X==0 Entonces
-		A=N
+		A=N+2
 		Repetir
 			C=C+1
 			Imprimir A
